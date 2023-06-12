@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to the Java Code Expert System.");
+        System.out.println("Please answer the following questions with 'yes' or 'no'.");
+
+        String response;
+
+        response = askQuestion("Does your code contain syntax errors?");
+        if (response.equals("yes")) {
+            System.out.println("There is a syntax error in your code. Check for missing semicolons, brackets, or parentheses.");
+            return;
+        }
+
+        response = askQuestion("Are you getting null pointer exceptions?");
+        if (response.equals("yes")) {
+            System.out.println("You are trying to access a null reference. Check that you have initialized the variable correctly.");
+            return;
+        }
+
+        response = askQuestion("Are you getting index out of bounds exceptions?");
+        if (response.equals("yes")) {
+            System.out.println("You are trying to access an array or list index that is out of bounds. Check the size of the array or list.");
+            return;
+        }
+
+        response = askQuestion("Are you getting arithmetic exceptions?");
+        if (response.equals("yes")) {
+            System.out.println("You are trying to divide by zero. Check that the denominator is not zero.");
+            return;
+        }
+
+        response = askQuestion("Are you getting class not found errors?");
+        if (response.equals("yes")) {
+            System.out.println("You are trying to use a class that is not in the classpath. Check that the class is in the right package and that the classpath is set up correctly.");
+            return;
+        }
+
+        response = askQuestion("Are you getting no class definition found errors?");
+        if (response.equals("yes")) {
+            System.out.println("You are trying to use a class that was compiled with a different version of Java. Check that the class was compiled with the same version of Java as your code.");
+            return;
+        }
+
+        System.out.println("Your code may have a logical error. Check that your algorithms and data structures are correct.");
+    }
+
+    private static String askQuestion(String question) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(question);
+        return scanner.nextLine();
+    }
+}
